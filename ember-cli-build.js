@@ -18,13 +18,13 @@ module.exports = function(defaults) {
 
   switch(env) {
     case 'development':
-      fingerprintOptions.prepend = 'http://localhost:4201';
+      fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'development/';
       break;
     case 'staging':
-     fingerprintOptions.prepend  = 'https://s3.amazonaws.com/tge-assets/event-client/staging/';
+     fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'staging/';
      break;
     case 'production':
-     fingerprintOptions.prepend  = 'https://s3.amazonaws.com/tge-assets/event-client/production/';
+     fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'production/';
      break;
   }
 

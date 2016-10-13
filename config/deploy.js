@@ -15,7 +15,7 @@ module.exports = function(deployTarget) {
 
     redis: {
       allowOverwrite: true,
-      keyPrefix:      'tge-admin-client:index',
+      keyPrefix:      process.env.REDIS_KEY_PREFIX,
       url:            process.env.REDIS_URL
     },
 
