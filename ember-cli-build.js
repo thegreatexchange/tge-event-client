@@ -18,7 +18,7 @@ module.exports = function(defaults) {
 
   switch(env) {
     case 'development':
-      fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'development/';
+      fingerprintOptions.prepend  = 'http://localhost:4201/';
       break;
     case 'staging':
      fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'staging/';
