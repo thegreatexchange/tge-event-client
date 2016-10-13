@@ -13,7 +13,7 @@ bower:
 
 server:
   <<: *defaults
-  command: server --watcher polling
+  command: server --watcher polling --port 4201
   ports:
-    - "4200:4200"
+    - "4201:4201"
     - "49152:49152"
