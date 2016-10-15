@@ -1,1 +1,37 @@
-{{outlet}}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+      </button>
+      {{#link-to "index" class="navbar-brand"}}  <img src="http://www.thegreatexchange.org/wp-content/uploads/2015/07/cropped-the_website_header.png" style="position: relative; width: 250px; top: -5px;" /> {{/link-to}}
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+      {{#if session.isAuthenticated}}
+        <ul class="nav navbar-nav navbar-left">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{session.data.authenticated.email}}<span class="caret"></span></a>
+           <ul class="dropdown-menu">
+             <li> <a {{action 'invalidateSession'}}><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+           </ul>
+         </li>
+        </ul>
+      {{else}}
+        <ul class="nav navbar-nav navbar-right">
+          <li>{{#link-to "login"}}<span class="glyphicon glyphicon-log-in"></span> Sign in{{/link-to}}</li>
+        </ul>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 main">
+      {{outlet}}
+    </div>
+  </div>
+</div>
