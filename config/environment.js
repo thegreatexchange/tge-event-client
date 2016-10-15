@@ -1,10 +1,10 @@
 /* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'myapp',
+    podModulePrefix: 'myapp/pods',
     environment: environment,
-    rootURL: '/',
+    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -19,6 +19,25 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token'
+  };
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: '/authenticate/',
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    // headers: {},
+    // refreshAccessTokens: true,
+    // serverTokenRefreshEndpoint: '/api/token-refresh/',
+    tokenExpireName: 'exp',
+    // refreshLeeway: 0,
+    // timeFactor: 1  // example - set to "1000" to convert incoming seconds to milliseconds.
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -29,6 +48,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
+    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
