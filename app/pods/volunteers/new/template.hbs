@@ -1,23 +1,48 @@
 <div class="page-header">
-  <span class="h2 text-info">Register volunteer</span>
+  <span class="h2 text-info">Register a volunteer</span>
 </div>
 <form>
-  <div class="form-group form-group-lg">
-    {{input value=model.name type="text" class="form-control" placeholder="Name"}}
+  <div class="col-md-12">
+    <div class="form-group form-group-lg">
+      {{input value=model.name type="text" class="form-control" placeholder="Name"}}
+    </div>
   </div>
-  <div class="form-group input-group input-group-lg">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-    {{input value=model.email class="form-control" type="email" placeholder="Email address"}}
+  <div class="col-md-6">
+    <div class="form-group input-group input-group-lg">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+      {{input value=model.email class="form-control" type="email" placeholder="Email address"}}
+    </div>
   </div>
-  <div class="form-group input-group input-group-lg">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
-    {{input value=model.phoneNumber class="form-control" type="text" placeholder="Phone number"}}
+  <div class="col-md-6">
+    <div class="form-group input-group input-group-lg">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
+      {{input value=model.email class="form-control" type="email" placeholder="Confirm email address"}}
+    </div>
   </div>
-  <div class="form-group input-group input-group-lg">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-    {{input value=model.location class="form-control" type="text" placeholder="Location"}}
+  <div class="col-md-12">
+    <div class="form-group input-group input-group-lg">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+      {{input value=model.phoneNumber class="form-control" type="text" placeholder="Phone number"}}
+    </div>
   </div>
-  <div class="form-actions">
+  <div class="col-md-12">
+    <div class="form-group input-group input-group-lg">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+      {{input value=model.location class="form-control" type="text" placeholder="College or university"}}
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group input-group input-group-lg">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
+      {{input value=model.location class="form-control" type="text" placeholder="Campus ministry or church"}}
+    </div>
+  </div>
+  <div class="col-md-12 text-info text-center">
+    <p>I would like to know when a GE Event is happening in my area via
+    {{input type="checkbox" name="isTextEnabled" checked=isTextEnabled }} <label for="isTextEnabled">Text</label>
+    and/or via {{input type="checkbox" name="isEmailEnabled" checked=isEmailEnabled }} <label for="isEmailEnabled">E-mail</label></p>
+  </div>
+  <div class="form-actions col-md-12">
     <button type="submit" class="btn btn-primary btn-lg" {{action "save"}}>Register</button>
     <button class="btn btn-default btn-lg" {{action "cancel"}}>Cancel</button>
   </div>
