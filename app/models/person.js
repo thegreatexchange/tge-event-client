@@ -1,12 +1,17 @@
-import Model from 'ember-data/model';
-import attr from 'ember-data/attr';
-// import { belongsTo, hasMany } from 'ember-data/relationships';
+import DS from 'ember-data';
 
-export default Model.extend({
+export default DS.Model.extend({
 
-  name:        attr('string'),
-  email:       attr('string'),
-  phoneNumber: attr('string'),
-  location:    attr('string')
+  name:        DS.attr('string'),
+  email:       DS.attr('string'),
+  phoneNumber: DS.attr('string'),
+  location:    DS.attr('string'),
+  ministry:    DS.attr('string'),
+
+  isEmailEnabled: DS.attr('boolean', { defaultValue: true }),
+  isTextEnabled:  DS.attr('boolean', { defaultValue: true }),
+
+  school:   DS.belongsTo('school'),
+  ministry: DS.belongsTo('ministry')
 
 });
