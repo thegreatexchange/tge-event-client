@@ -6,7 +6,6 @@ export default DS.Model.extend({
   email:       DS.attr('string'),
   phoneNumber: DS.attr('string'),
   location:    DS.attr('string'),
-  ministry:    DS.attr('string'),
 
   isEmailEnabled: DS.attr('boolean', { defaultValue: true }),
   isTextEnabled:  DS.attr('boolean', { defaultValue: true }),
