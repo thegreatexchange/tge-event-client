@@ -48,6 +48,11 @@
       {{/x-select}}
     </div>
   </div>
+  <div class="col-md-12">
+    <div class="form-group">
+      {{textarea class="form-control" value=model.comments cols="80" rows="4" placeholder="Comments"}}
+    </div>
+  </div>
   <div class="col-md-12 text-info text-center">
     <p>I would like to know when a GE Event is happening in my area via
     {{input type="checkbox" name="isTextEnabled" checked=model.isTextEnabled }} <label for="isTextEnabled">Text</label>

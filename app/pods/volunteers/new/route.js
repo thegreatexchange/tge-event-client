@@ -19,15 +19,15 @@ export default BaseRoute.extend({
 
   afterModel() {
     var promises, _this;
-    _this = this;
     promises= {
       schools:    this.store.findAll('school'),
-      ministries: this.store.findAll('ministry')
+      ministries: this.store.findAll('ministry'),
+      events:     this.store.findAll('event')
     };
 
-    return Ember.RSVP.hash(promises).then(function(result) {
-      _this.set('schools', result.schools.toArray());
-      _this.set('ministries', result.ministries.toArray());
+    return Ember.RSVP.hash(promises).then((result) => {
+      this.set('schools', result.schools.toArray());
+      this.set('ministries', result.ministries.toArray());
     });
   },
 
