@@ -6,8 +6,8 @@ export default BaseRoute.extend({
   // Route Lifecycle
   ////////////////////////////////////////
   afterModel() {
-    if (this.get('session.performSetupAfterValidation')) {
-      this.set('session.performSetupAfterValidation', false);
+    if (this.get('session.setupAfterAuthentication')) {
+      this.set('session.setupAfterAuthentication', false);
 
       let promises= {
         schools:    this.store.findAll('school'),
