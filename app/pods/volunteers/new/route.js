@@ -3,12 +3,6 @@ import BaseRoute from '../../../routes/base';
 export default BaseRoute.extend({
 
   ////////////////////////////////////////
-  // Dependencies
-  ////////////////////////////////////////
-  session: Ember.inject.service('session'),
-  ////////////////////////////////////////
-
-  ////////////////////////////////////////
   // Properties
   ////////////////////////////////////////
   typeKey:            'person',
@@ -24,5 +18,10 @@ export default BaseRoute.extend({
       ministry: this.get('session.event.ministry')
     });
   },
+  setupController(controller, model) {
+    this._super(controller, model);
+    controller.set('schools',    this.store.peekAll('school'));
+    controller.set('ministries', this.store.peekAll('ministry'));
+  }
   ////////////////////////////////////////
 });

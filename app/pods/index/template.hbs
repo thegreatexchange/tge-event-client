@@ -6,7 +6,7 @@
       <div class="form-group form-group-lg">
         {{#x-select value=session.event class="form-control" as |xs|}}
           <option value>Select an event</option>
-          {{#each session.events as |event|}}
+          {{#each events as |event|}}
             {{#xs.option value=event}}{{event.school.name}} - {{event.startsAt}}{{/xs.option}}
           {{/each}}
         {{/x-select}}

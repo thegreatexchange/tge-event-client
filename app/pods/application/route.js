@@ -12,12 +12,6 @@ export default BaseRoute.extend(
 
 {
   ////////////////////////////////////////
-  // Dependencies
-  ////////////////////////////////////////
-  session: Ember.inject.service('session'),
-  ////////////////////////////////////////
-
-  ////////////////////////////////////////
   // Route Lifecycle
   ////////////////////////////////////////
   beforeModel(transition) {
@@ -34,13 +28,11 @@ export default BaseRoute.extend(
         events:     this.store.findAll('event')
       };
 
-      return Ember.RSVP.hash(promises).then((result) => {
-        this.set('session.schools',    result.schools.toArray());
-        this.set('session.ministries', result.ministries.toArray());
-        this.set('session.events',     result.events.toArray());
-      });
+      return Ember.RSVP.hash(promises)
+    } else {
+      this.set('session.performSetupAfterValidation', true);
     }
-  },
+  }
   ////////////////////////////////////////
 
 });

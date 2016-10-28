@@ -27,7 +27,7 @@
       <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
       {{#x-select value=model.school class="form-control" as |xs|}}
         <option value>Select college or university</option>
-        {{#each session.schools as |school|}}
+        {{#each schools as |school|}}
           {{#xs.option value=school}}{{school.name}}{{/xs.option}}
         {{/each}}
       {{/x-select}}
@@ -38,7 +38,7 @@
       <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
       {{#x-select value=model.ministry class="form-control" as |xs|}}
         <option value>Select campus ministry or church</option>
-        {{#each session.ministries as |ministry|}}
+        {{#each ministries as |ministry|}}
           {{#xs.option value=ministry}}{{ministry.name}}{{/xs.option}}
         {{/each}}
       {{/x-select}}
