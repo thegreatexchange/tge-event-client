@@ -2,12 +2,25 @@
 <div class="col-md-8">
   <div class="panel panel-default">
     <div class="panel-body" style="text-align: center;">
+      <h2 class="text-info">What event is happening today?</h2>
+      <div class="form-group form-group-lg">
+        {{#x-select value=session.event class="form-control" as |xs|}}
+          <option value>Select an event</option>
+          {{#each session.events as |event|}}
+            {{#xs.option value=event}}{{event.school.name}} - {{event.startsAt}}{{/xs.option}}
+          {{/each}}
+        {{/x-select}}
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body" style="text-align: center;">
       <div>
-        <h2 class="text-info">Volunteers</h2>
+        <h2 class="text-info">Register Volunteers</h2>
         <div>Volunteers are members of campus ministries and and churches that are volunteering to share the Gospel by giving surveys at The Great Exchange events.</div>
       </div>
       <div style="margin-top: 15px;">
-        {{#link-to "volunteers.new" class="btn btn-default btn-lg" }}Register{{/link-to}}
+        {{#link-to "volunteers.new" class="btn btn-primary btn-lg" }}Continue{{/link-to}}
       </div>
     </div>
   </div>
