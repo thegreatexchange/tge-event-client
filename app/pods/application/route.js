@@ -30,7 +30,7 @@ export default BaseRoute.extend(
 
       return Ember.RSVP.hash(promises)
     } else {
-      this.set('session.performSetupAfterValidation', true);
+      this.set('session.setupAfterAuthentication', true);
     }
   }
   ////////////////////////////////////////
