@@ -1,4 +1,5 @@
 import BaseRoute from '../../routes/base';
+import Ember     from 'ember';
 
 export default BaseRoute.extend({
 
@@ -15,12 +16,14 @@ export default BaseRoute.extend({
         events:     this.store.findAll('event')
       };
 
-      return Ember.RSVP.hash(promises)
+      return Ember.RSVP.hash(promises);
     }
   },
   setupController(controller, model) {
+    var events;
     this._super(controller, model);
-    controller.set('events', this.store.peekAll('event'));
+    events = this.store.peekAll('event');
+    controller.set('events', events.sortBy('startsAt'));
   }
   ////////////////////////////////////////
 });

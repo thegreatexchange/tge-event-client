@@ -7,7 +7,7 @@
         {{#x-select value=session.event class="form-control" as |xs|}}
           <option value>Select an event</option>
           {{#each events as |event|}}
-            {{#xs.option value=event}}{{event.school.name}} - {{event.startsAt}}{{/xs.option}}
+            {{#xs.option value=event}}{{event.name}}{{/xs.option}}
           {{/each}}
         {{/x-select}}
       </div>

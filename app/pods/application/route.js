@@ -28,7 +28,7 @@ export default BaseRoute.extend(
         events:     this.store.findAll('event')
       };
 
-      return Ember.RSVP.hash(promises)
+      return Ember.RSVP.hash(promises);
     } else {
       this.set('session.setupAfterAuthentication', true);
     }
