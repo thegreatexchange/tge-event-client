@@ -14,8 +14,9 @@ export default BaseRoute.extend({
   ////////////////////////////////////////
   model() {
     return this._createRecord({
-      school: this.get('session.event.school'),
-      ministry: this.get('session.event.ministry')
+      school:   this.get('session.event.school'),
+      ministry: this.get('session.event.ministry'),
+      eventId:  this.get('session.event.id')
     });
   },
   setupController(controller, model) {
