@@ -44,6 +44,7 @@
     "ember-simple-auth": "1.1.0",
     "ember-simple-auth-token": "1.1.1",
     "ember-welcome-page": "^1.0.1",
+    "emberx-select": "2.2.2",
     "loader.js": "^4.0.1"
   }
 }
