@@ -1,8 +1,0 @@
-{{#if hasErrors}}
-  {{#each errors as |error|}}
-    <div class="alert alert-warning" role="alert">
-      <span class="glyphicon glyphicon-warning-sign clickable" aria-hidden="true"></span>
-      <span>{{error.attribute}}</span> {{error.message}}
-    </div>
-  {{/each}}
-{{/if}}
