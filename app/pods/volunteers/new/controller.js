@@ -17,8 +17,12 @@ export default BaseController.extend({
   ////////////////////////////////////////
   actions: {
     save() {
-      this.get('model').save().then(() => {
+      this.get('model').save().then((model) => {
+        let message;
         this.transitionToRoute('volunteers.index');
+        message = model.get('name');
+        message = message + ' is registered successfully.';
+        this.get('flashMessages').notifySuccess(message);
       });
     },
     cancel() {

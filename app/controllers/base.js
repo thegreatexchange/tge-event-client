@@ -5,7 +5,8 @@ export default Ember.Controller.extend({
   ////////////////////////////////////////
   // Dependencies
   ////////////////////////////////////////
-  session: Ember.inject.service('session'),
+  session:       Ember.inject.service('session'),
+  flashMessages: Ember.inject.service('flashMessages'),
   ////////////////////////////////////////
 
   ////////////////////////////////////////
