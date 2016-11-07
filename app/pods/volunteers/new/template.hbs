@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-6">
     <div class="form-group input-group input-group-lg">
-      <span class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
+      <span class="input-group-addon {{if isEmailConfirmed "success" "warning"}}"><span class="glyphicon glyphicon-{{if isEmailConfirmed "ok" "alert"}}"></span></span>
       {{input value=confirmationEmail class="form-control" type="email" placeholder="Confirm email address"}}
     </div>
   </div>
@@ -26,7 +26,7 @@
   <div class="col-md-12">
     <div class="form-group input-group input-group-lg">
       <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-      {{#x-select value=model.school class="form-control" as |xs|}}
+      {{#x-select value=model.school.content class="form-control" as |xs|}}
         <option value>Select college or university</option>
         {{#each schools as |school|}}
           {{#xs.option value=school}}{{school.name}}{{/xs.option}}
@@ -37,9 +37,9 @@
   <div class="col-md-12">
     <div class="form-group input-group input-group-lg">
       <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
-      {{#x-select value=model.ministry class="form-control" as |xs|}}
+      {{#x-select value=model.ministry.content class="form-control" as |xs|}}
         <option value>Select campus ministry or church</option>
-        {{#each ministries as |ministry|}}
+        {{#each ministriesForSchool as |ministry|}}
           {{#xs.option value=ministry}}{{ministry.name}}{{/xs.option}}
         {{/each}}
       {{/x-select}}
@@ -51,12 +51,12 @@
     </div>
   </div>
   <div class="col-md-12 text-info text-center">
-    <p>I would like to know when a GE Event is happening in my area via
+    <p>I would like to know when a GE Event is happening in my area<br>via
     {{input type="checkbox" name="isTextEnabled" checked=model.isTextEnabled }} <label for="isTextEnabled">Text</label>
     and/or via {{input type="checkbox" name="isEmailEnabled" checked=model.isEmailEnabled }} <label for="isEmailEnabled">E-mail</label></p>
   </div>
   <div class="form-actions col-md-12">
-    <button type="submit" class="btn btn-primary btn-lg" {{action "save"}}>Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg {{if isSaveDisabled "disabled"}}" {{action "save"}}>Submit</button>
     <button class="btn btn-default btn-lg" {{action "cancel"}}>Cancel</button>
   </div>
 </form>
