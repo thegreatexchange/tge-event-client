@@ -52,8 +52,8 @@
   </div>
   <div class="col-md-12 text-info text-center">
     <p>I would like to know when a GE Event is happening in my area<br>via
-    {{input type="checkbox" name="isTextEnabled" checked=model.isTextEnabled }} <label for="isTextEnabled">Text</label>
-    and/or via {{input type="checkbox" name="isEmailEnabled" checked=model.isEmailEnabled }} <label for="isEmailEnabled">E-mail</label></p>
+    {{input type="checkbox" name="isTextEnabled" checked=model.isTextEnabled disabled=isTextEnabledCheckBoxDisabled}} <label for="isTextEnabled">Text</label>
+    and/or via {{input type="checkbox" name="isEmailEnabled" checked=model.isEmailEnabled disabled=isEmailEnabledCheckBoxDisabled }} <label for="isEmailEnabled">E-mail</label></p>
   </div>
   <div class="form-actions col-md-12">
     <button type="submit" class="btn btn-primary btn-lg {{if isSaveDisabled "disabled"}}" {{action "save"}}>Submit</button>

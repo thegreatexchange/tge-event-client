@@ -11,8 +11,8 @@ export default DS.Model.extend({
   eventId:     DS.attr('string'),
   comments:    DS.attr('string'),
 
-  isEmailEnabled: DS.attr('boolean', { defaultValue: true }),
-  isTextEnabled:  DS.attr('boolean', { defaultValue: true }),
+  isEmailEnabled: DS.attr('boolean', { defaultValue: false }),
+  isTextEnabled:  DS.attr('boolean', { defaultValue: false }),
 
   school:   DS.belongsTo('school'),
   ministry: DS.belongsTo('ministry')
