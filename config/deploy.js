@@ -1,6 +1,6 @@
 var VALID_DEPLOY_TARGETS = [
   'development',
-  'staging',
+  'qa',
   'production'
 ];
 
@@ -32,7 +32,7 @@ module.exports = function(deployTarget) {
     ENV.build.environment  = 'development';
   }
 
-  if (deployTarget === 'staging' || deployTarget === 'production') {
+  if (deployTarget === 'qa' || deployTarget === 'production') {
     ENV.build.environment  = 'production';
   }
 
