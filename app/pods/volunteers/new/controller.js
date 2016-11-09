@@ -76,7 +76,7 @@ export default BaseController.extend({
     }
   },
 
-  _updateIsTextEnabled() {
+  _updateIsEmailEnabled() {
     if (this.get('isEmailConfirmed')) {
       this.set('model.isEmailEnabled',           true);
       this.set('isEmailEnabledCheckBoxDisabled', false);
