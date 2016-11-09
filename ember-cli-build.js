@@ -9,7 +9,7 @@ module.exports = function(defaults) {
       app;
 
   env          = EmberApp.env() || 'development';
-  isProdBuild  = ['production', 'staging'].indexOf(env) > -1;
+  isProdBuild  = ['production', 'qa'].indexOf(env) > -1;
 
   fingerprintOptions = {
     enabled:    true,
@@ -20,8 +20,8 @@ module.exports = function(defaults) {
     case 'development':
       fingerprintOptions.prepend  = 'http://localhost:4201/';
       break;
-    case 'staging':
-     fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'staging/';
+    case 'qa':
+     fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'qa/';
      break;
     case 'production':
      fingerprintOptions.prepend  = process.env.FINGERPRINT_PREPEND + 'production/';

@@ -28,13 +28,9 @@ module.exports = function(deployTarget) {
     }
   };
 
-  if (deployTarget === 'development') {
-    ENV.build.environment  = 'development';
-  }
-
-  if (deployTarget === 'qa' || deployTarget === 'production') {
-    ENV.build.environment  = 'production';
-  }
+  if (deployTarget === 'development') { ENV.build.environment  = 'development'; }
+  if (deployTarget === 'qa')          { ENV.build.environment  = 'qa'; }
+  if (deployTarget === 'production')  { ENV.build.environment  = 'production'; }
 
   return ENV;
 
