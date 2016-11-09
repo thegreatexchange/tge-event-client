@@ -19,8 +19,7 @@ export default BaseRoute.extend({
       eventId:  this.get('session.event.id')
     });
   },
-  setupController(controller, model) {
-    this._super(controller, model);
+  beforeAddObservers(controller, model) {
     controller.set('schools',    this.store.peekAll('school'));
     controller.set('ministries', this.store.peekAll('ministry'));
   }
