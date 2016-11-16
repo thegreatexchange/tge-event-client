@@ -15,7 +15,7 @@ export default BaseController.extend({
         ministries = this.get('ministries');
     if (school) {
       return ministries.filter((ministry) => {
-        if (!ministry.get('schoolId') || ministry.get('schoolId') == school.get('id')) {
+        if (!ministry.get('schoolId') || ministry.get('schoolId') === school.get('id')) {
           return true;
         } else {
           return false;

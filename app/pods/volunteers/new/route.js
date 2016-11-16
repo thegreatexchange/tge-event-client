@@ -20,6 +20,7 @@ export default BaseRoute.extend({
     });
   },
   beforeAddObservers(controller, model) {
+    this._super(controller, model);
     controller.set('schools',    this.store.peekAll('school'));
     controller.set('ministries', this.store.peekAll('ministry'));
   }
