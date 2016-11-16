@@ -11,6 +11,7 @@ export default Ember.Component.extend({
   ////////////////////////////////////////
   // Properties
   ////////////////////////////////////////
+  classNames: ['padding-vertical-8'],
   messages: Ember.computed('flashMessages.messages.[]', function() {
     return this.get('flashMessages.messages');
   }),
