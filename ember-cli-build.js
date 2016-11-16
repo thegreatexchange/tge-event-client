@@ -13,7 +13,7 @@ module.exports = function(defaults) {
 
   fingerprintOptions = {
     enabled:    true,
-    extensions: [ 'js', 'css', 'png', 'jpg', 'gif' ]
+    extensions: [ 'js', 'css', 'png', 'jpg', 'gif', 'svg' ]
   };
 
   switch(env) {
