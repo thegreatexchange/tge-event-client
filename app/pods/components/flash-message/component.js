@@ -40,7 +40,11 @@ export default Ember.Component.extend({
   ////////////////////////////////////////
   actions: {
     dismiss(){
-      this.get('flashMessages').dismiss(this.get('flashMessage'));
+      let alert = $(this.get('element')).find('.alert')
+      $(alert).on('closed.bs.alert', () => {
+        this.get('flashMessages').dismiss(this.get('flashMessage'));
+      });
+      alert.alert('close');
     }
   }
   ////////////////////////////////////////
