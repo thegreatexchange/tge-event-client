@@ -16,9 +16,15 @@ export default BaseController.extend({
   }),
 
   isAdminAppAuthorized: Ember.computed('authorizations.[]', function() {
+    if (!this.get('authorizations')) {
+      return false;
+    }
     return this.get('authorizations').includes('app_admin');
   }),
   isEventAppAuthorized: Ember.computed('authorizations.[]', function() {
+    if (!this.get('authorizations')) {
+      return false;
+    }
     return this.get('authorizations').includes('app_event');
   }),
   ////////////////////////////////////////
