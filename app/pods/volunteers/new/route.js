@@ -14,15 +14,13 @@ export default BaseRoute.extend({
   ////////////////////////////////////////
   model() {
     return this._createRecord({
-      school:   this.get('session.event.school'),
-      ministry: this.get('session.event.ministry'),
-      eventId:  this.get('session.event.id')
+      organization: this.get('session.event.organization'),
+      eventId:      this.get('session.event.id')
     });
   },
   beforeAddObservers(controller, model) {
     this._super(controller, model);
-    controller.set('schools',    this.store.peekAll('school'));
-    controller.set('ministries', this.store.peekAll('ministry'));
+    controller.set('organizations', this.store.peekAll('organization'));
   }
   ////////////////////////////////////////
 });

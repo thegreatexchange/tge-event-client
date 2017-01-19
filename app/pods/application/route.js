@@ -23,9 +23,8 @@ export default BaseRoute.extend(
   afterModel() {
     if (this.get('session.isAuthenticated')) {
       let promises= {
-        schools:    this.store.findAll('school'),
-        ministries: this.store.findAll('ministry'),
-        events:     this.store.findAll('event')
+        organization: this.store.findAll('organization'),
+        events:       this.store.findAll('event')
       };
 
       return Ember.RSVP.hash(promises);

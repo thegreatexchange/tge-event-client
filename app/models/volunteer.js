@@ -14,7 +14,6 @@ export default DS.Model.extend({
   isEmailEnabled: DS.attr('boolean', { defaultValue: false }),
   isTextEnabled:  DS.attr('boolean', { defaultValue: false }),
 
-  school:   DS.belongsTo('school'),
-  ministry: DS.belongsTo('ministry')
+  organization: DS.belongsTo('organization')
 
 });

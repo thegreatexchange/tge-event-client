@@ -5,13 +5,13 @@
       {{input value=model.name type="text" class="form-control" placeholder="Name"}}
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12">
     <div class="form-group input-group input-group-lg">
       <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
       {{input value=model.email class="form-control" type="email" placeholder="Email address"}}
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12">
     <div class="form-group input-group input-group-lg">
       <span class="input-group-addon {{if isEmailConfirmed "success" "warning"}}"><span class="glyphicon glyphicon-{{if isEmailConfirmed "ok" "alert"}}"></span></span>
       {{input value=confirmationEmail class="form-control" type="email" placeholder="Confirm email address"}}
@@ -26,21 +26,10 @@
   <div class="col-md-12">
     <div class="form-group input-group input-group-lg">
       <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-      {{#x-select value=model.school.content class="form-control" as |xs|}}
-        <option value>Select college or university</option>
-        {{#each schools as |school|}}
-          {{#xs.option value=school}}{{school.name}}{{/xs.option}}
-        {{/each}}
-      {{/x-select}}
-    </div>
-  </div>
-  <div class="col-md-12">
-    <div class="form-group input-group input-group-lg">
-      <span class="input-group-addon"><span class="glyphicon glyphicon-home"></span></span>
-      {{#x-select value=model.ministry.content class="form-control" as |xs|}}
-        <option value>Select campus ministry or church</option>
-        {{#each ministriesForSchool as |ministry|}}
-          {{#xs.option value=ministry}}{{ministry.name}}{{/xs.option}}
+      {{#x-select value=model.organization.content class="form-control" as |xs|}}
+        <option value>Select organization</option>
+        {{#each organizations as |organization|}}
+          {{#xs.option value=organization}}{{organization.name}}{{/xs.option}}
         {{/each}}
       {{/x-select}}
     </div>

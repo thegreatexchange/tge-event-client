@@ -7,29 +7,15 @@ export default BaseController.extend({
   // Properties
   ////////////////////////////////////////
   confirmationEmail:              null,
+  organizations:                  [],
   isTextEnabledCheckBoxDisabled:  true,
   isEmailEnabledCheckBoxDisabled: true,
-
-  ministriesForSchool: Ember.computed('model.school.content', 'ministries.[]', function() {
-    let school     = this.get('model.school.content'),
-        ministries = this.get('ministries');
-    if (school) {
-      return ministries.filter((ministry) => {
-        if (!ministry.get('schoolId') || ministry.get('schoolId') === school.get('id')) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-    } else {
-      return ministries;
-    }
-  }),
 
   resetProperties() {
     this.set('confirmationEmail',              null);
     this.set('isTextEnabledCheckBoxDisabled',  true);
     this.set('isEmailEnabledCheckBoxDisabled', true);
+    this.set('organizations', []);
   },
   ////////////////////////////////////////
 
