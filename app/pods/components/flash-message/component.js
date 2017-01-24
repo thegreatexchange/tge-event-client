@@ -36,8 +36,8 @@ export default Ember.Component.extend({
 
   didRender() {
     if (!this.get('flashMessage.persist')) {
-      Ember.run.later(() => { this.send('dismiss') }, 3000);
-    }
+      Ember.run.later(() => { this.send('dismiss'); }, 3000);
+    };
   },
   ////////////////////////////////////////
 
