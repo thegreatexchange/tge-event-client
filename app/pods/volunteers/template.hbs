@@ -1,0 +1,13 @@
+<div class="logo-md padding-vertical-8 right">
+  {{#link-to "index"}}<img alt="The Great Exchange" src="/event/assets/images/logo-sm.png" />{{/link-to}}
+</div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div id="item-outlet" class="col-xs-12 col-sm-8">
+    <div class="page-header">
+      <span class="h1 text-info">Volunteer registration{{#if session.event}}<br><small>{{session.event.name}}</small>{{/if}}</span>
+    </div>
+    {{outlet}}
+  </div>
+
+</div>

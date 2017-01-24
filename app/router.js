@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login', { path: 'sign-in' });
+  this.route('volunteers', function() {
+    this.route('new');
+  });
 });
 
 export default Router;
